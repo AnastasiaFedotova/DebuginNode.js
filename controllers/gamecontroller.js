@@ -1,10 +1,14 @@
-var router = require('express').Router();
-var Game = require('../models/game');
+import { Router } from 'express';
+import * as Game from '../models/game.js';
+import validation from '../middleware/validate-session.js';
+const router = new Router();
 
-router.use(require('./../middleware/validate-session'));
+router.use(validation);
 
 router.get('/all', (req, res) => {
-    Game.findAll({ where: { owner_id: req.user.id } })
+    Game.findAll({ where: { 
+        owner_id: req.user.id 
+    }})
         .then(
             function findSuccess(data) {
                 res.status(200).json({
@@ -115,4 +119,4 @@ router.delete('/remove/:id', (req, res) => {
     )
 })
 
-module.exports = router;
+export default router;

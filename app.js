@@ -1,11 +1,11 @@
-var express = require('express');
-var app = express();
-var db = require('./db');
-var user = require('./controllers/usercontroller');
-var game = require('./controllers/gamecontroller')
+import express from 'express';
+const app = express();
+import sequelize from './db.js';
+import user from './controllers/usercontroller.js';
+import game from './controllers/gamecontroller.js';
 const port = process.env.PORT || 4000;
 
-db.sync();
+sequelize.sync();
 app.use(express.json());
 app.use('/api/game', game);
 

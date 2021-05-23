@@ -1,6 +1,7 @@
-const Sequelize = require("sequelize");
-const db = require("./../db");
-module.exports = db.define('game', {
+import Sequelize from "sequelize";
+import db from "./../db.js";
+
+export default db.define('game', {
         title: {
             type: Sequelize.STRING(25),
             allowNull: false,
