@@ -1,7 +1,7 @@
 import Sequelize from "sequelize";
 import db from "./../db.js";
 
-export default db.define('game', {
+const Game = db.define('game', {
         title: {
             type: Sequelize.STRING(25),
             allowNull: false,
@@ -37,3 +37,5 @@ export default db.define('game', {
             allowNull: false
         }
     })
+
+export default Game;

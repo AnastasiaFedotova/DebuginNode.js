@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import * as Game from '../models/game.js';
+import Game from '../models/game.js';
 import validation from '../middleware/validate-session.js';
 const router = new Router();
 

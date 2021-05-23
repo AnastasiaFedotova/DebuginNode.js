@@ -1,7 +1,7 @@
 import { Router }  from 'express';
 import bcrypt from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
-import * as User from '../models/user.js';
+import User from '../models/user.js';
 
 const router = new Router();
 router.post('/signup', (req, res) => {

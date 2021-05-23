@@ -1,7 +1,7 @@
 import Sequelize from "sequelize";
 import db from "./../db.js";
 
-export default db.define('users', {
+const User = db.define('users', {
         full_name: {
             type: Sequelize.STRING,
             allowNull: false
@@ -25,3 +25,5 @@ export default db.define('users', {
             }
         }
     })
+
+export default User;
