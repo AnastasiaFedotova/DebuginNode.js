@@ -1,6 +1,6 @@
-const Sequelize = require('sequelize');
+import Sequelize from 'sequelize';
                                 //database username   password
-const sequelize = new Sequelize('gamedb', 'postgres', 'ghastb0i', {
+const sequelize = new Sequelize('gamedb', 'postgres', '1321081Aa', {
     host: 'localhost',
     dialect: 'postgres'
 })
@@ -14,3 +14,5 @@ sequelize.authenticate().then(
         console.log(`Error: ${err}`);
     }
 )
+
+export default sequelize;
