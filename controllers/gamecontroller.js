@@ -8,7 +8,7 @@ router.get('/all', (req, res) => {
         .then(
             function findSuccess(data) {
                 res.status(200).json({
-                    games: games,
+                    games: data,
                     message: "Data fetched."
                 })
             },
@@ -72,7 +72,7 @@ router.put('/update/:id', (req, res) => {
         {
             where: {
                 id: req.params.id,
-                owner_id: req.user
+                owner_id: req.user.id
             }
         })
         .then(
